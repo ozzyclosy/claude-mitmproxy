@@ -1,13 +1,13 @@
 meta:
-  environment: python
+  environment: docker
   toolchain:
-    name: pip
-    version: "3.11"
+    name: docker
 build:
-  requirementsPath: requirements.txt
-  useCache: false
+  dockerfile: Dockerfile
+  skip: false
 run:
-  scriptName: null
-  command: mitmproxy -s mitmproxy_proxy.py --listen-port 80 --ssl-insecure
+  image: null
+  command: null
+  args: null
   persistenceMount: /data
   containerPort: "80"
